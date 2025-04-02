@@ -77,7 +77,8 @@ contactForm.addEventListener('submit', async (e) => {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
-        const response = await fetch('http://localhost:3000/api/contact', {
+        // Replace with your Render URL
+        const response = await fetch('https://portfolio254.onrender.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -111,8 +112,7 @@ function showNotification(message, type) {
     
     // Remove notification after 3 seconds
     setTimeout(() => {
-        notification.classList.add('fade-out');
-        setTimeout(() => notification.remove(), 300);
+        notification.remove();
     }, 3000);
 }
 
@@ -226,6 +226,7 @@ document.addEventListener('keydown', function(event) {
         closeModal();
     }
 });
+
 
 
 
