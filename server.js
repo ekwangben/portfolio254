@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('./')); 
+app.use(express.static('.')); // Serve static files from root directory
 
 // Email configuration
 const transporter = nodemailer.createTransport({
@@ -28,6 +28,11 @@ transporter.verify(function(error, success) {
     } else {
         console.log("Server is ready to send emails");
     }
+});
+
+// Add a test route
+app.get('/test', (req, res) => {
+    res.json({ message: 'Server is running!' });
 });
 
 // Contact form endpoint
@@ -74,7 +79,8 @@ This email was sent from your portfolio contact form.`,
     }
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
