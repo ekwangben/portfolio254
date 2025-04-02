@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Portfolio - Your Name - Web Developer">
+    <title>erot benard - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="preload" as="image" href="images/background-image.jpg"> -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="light">
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">EROT</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="highlight">EROT BENARD</span></h1>
+            <p class="typing-text">I'm a Web Developer</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary">
+                    <i class="fas fa-code"></i> View Work
+                </a>
+                <a href="#contact" class="btn secondary">
+                    <i class="fas fa-envelope"></i> Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/me.png.png" alt="EROT BENARD" loading="lazy">
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter Profile">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="intro">Hello! I'm <span class="highlight">EROT BENARD</span>, a passionate Web Developer based in Kenya.</p>
+                    <p>I am a highly motivated IT student with a strong passion for web and mobile application development. My expertise lies in React.js, React Native, and full-stack development, where I enjoy crafting intuitive, scalable, and user-friendly digital solutions.</p>
+                </div>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <h4>Education</h4>
+                            <p>Bachelor's in Information Technology</p>
+                            <p class="subtle">KAIMOSI FRIENDS UNIVERSITY</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-code"></i>
+                        <div>
+                            <h4>Experience</h4>
+                            <p>2+ Years of Web Development</p>
+                            <p class="subtle">Frontend & Backend Development</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-cta">
+                    <a href="your-resume.pdf" class="btn primary" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="#contact" class="btn secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-react"></i>
+                <h3>React & React Native</h3>
+                <p>Building modern web and mobile applications with React ecosystem, including Redux, Hooks, and Context API</p>
+                <div class="skill-level">
+                    <div class="skill-level-fill" style="transform: scaleX(0.9);"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Modern ES6+, Async/Await, DOM manipulation, and JavaScript frameworks</p>
+                <div class="skill-level">
+                    <div class="skill-level-fill" style="transform: scaleX(0.85);"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-node-js"></i>
+                <h3>Node.js</h3>
+                <p>Server-side development with Express.js, RESTful APIs, and database integration</p>
+                <div class="skill-level">
+                    <div class="skill-level-fill" style="transform: scaleX(0.8);"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Databases</h3>
+                <p>Working with MongoDB, MySQL, and Firebase for data management</p>
+                <div class="skill-level">
+                    <div class="skill-level-fill" style="transform: scaleX(0.75);"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5 & CSS3</h3>
+                <p>Semantic markup, Flexbox, Grid, Animations, and Responsive Design</p>
+                <div class="skill-level">
+                    <div class="skill-level-fill" style="transform: scaleX(0.95);"></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Development</h3>
+                <p>Cross-platform mobile app development with React Native and Expo</p>
+                <div class="skill-level">
+                    <div class="skill-level-fill" style="transform: scaleX(0.85);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="images/booking app image.png" alt="Hostel Booking App">
+                <div class="project-title">
+                    <h3>Hostel Booking App</h3>
+                </div>
+                <div class="project-info">
+                    <p>A mobile application built with React Native and Expo that simplifies hostel booking for students. Features include real-time room availability, secure payments, and virtual room tours.</p>
+                    <div class="project-tech">
+                        <span>React Native</span>
+                        <span>Expo</span>
+                        <span>Firebase</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="images/task manager app.png" alt="Task Manager">
+                <div class="project-title">
+                    <h3>Task Manager App</h3>
+                </div>
+                <div class="project-info">
+                    <p>A React Native mobile app for task management with real-time updates, push notifications, and team collaboration features.</p>
+                    <div class="project-tech">
+                        <span>React Native</span>
+                        <span>Firebase</span>
+                        <span>Redux</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="images/weather dashboard.png" alt="Weather App">
+                <div class="project-title">
+                    <h3>Weather Dashboard</h3>
+                </div>
+                <div class="project-info">
+                    <p>A weather application built with JavaScript that provides real-time weather updates using OpenWeatherMap API.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span>
+                        <span>Weather API</span>
+                        <span>CSS3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p class="section-subtitle">Ready to discuss your project? <span class="highlight">Choose your preferred method</span></p>
+        
+        <div class="contact-container">
+            <!-- Contact Methods Grid -->
+            <div class="contact-methods">
+                <!-- Email Card -->
+                <div class="contact-card">
+                    <a href="mailto:ekwangbenard@gmail.com" class="contact-method">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Inquiry</h3>
+                            <p>ekwangbenard@gmail.com</p>
+                            <div class="contact-meta">
+                                <span class="availability">
+                                    <i class="fas fa-clock"></i>
+                                    Response within 24h
+                                </span>
+                                <span class="preferred">
+                                    <i class="fas fa-star"></i>
+                                    Preferred
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Phone Card -->
+                <div class="contact-card">
+                    <a href="tel:+254703193769" class="contact-method">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Direct Call</h3>
+                            <p>+254 703 193 769</p>
+                            <div class="contact-meta">
+                                <span class="availability">
+                                    <i class="fas fa-business-time"></i>
+                                    9:00 AM - 6:00 PM EAT
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="contact-card">
+                    <a href="https://wa.me/254703193769" class="contact-method">
+                        <div class="icon-wrapper">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>WhatsApp Chat</h3>
+                            <p>Quick Messages & Updates</p>
+                            <div class="contact-meta">
+                                <span class="availability">
+                                    <i class="fas fa-bolt"></i>
+                                    Fastest Response
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form id="contact-form" class="contact-form">
+                <div class="form-header">
+                    <h3>Send Me a Message</h3>
+                    <p>I'll get back to you as soon as possible</p>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Full Name</label>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="subject" name="subject" required>
+                    <label for="subject">Subject</label>
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+
+                <div class="input-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Your Message</label>
+                    <i class="fas fa-comment-alt"></i>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <h3>EROT BENARD</h3>
+                    <p class="footer-role">Web Developer & Designer</p>
+                </div>
+                <p class="footer-tagline">Creating Digital Experiences That Make A Difference</p>
+            </div>
+
+            <div class="footer-section navigation-section">
+                <h4>Navigation</h4>
+                <div class="footer-nav-container">
+                    <div class="nav-column">
+                        <h5>Main</h5>
+                        <nav class="footer-nav">
+                            <a href="#home">
+                                <i class="fas fa-home"></i>
+                                <span>Home</span>
+                            </a>
+                            <a href="#about">
+                                <i class="fas fa-user"></i>
+                                <span>About</span>
+                            </a>
+                            <a href="#portfolio">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Portfolio</span>
+                            </a>
+                        </nav>
+                    </div>
+                    
+                    <div class="nav-column">
+                        <h5>Resources</h5>
+                        <nav class="footer-nav">
+                            <a href="#skills">
+                                <i class="fas fa-code"></i>
+                                <span>Skills</span>
+                            </a>
+                            <a href="#projects">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Projects</span>
+                            </a>
+                            <a href="#blog">
+                                <i class="fas fa-blog"></i>
+                                <span>Blog</span>
+                            </a>
+                        </nav>
+                    </div>
+
+                    <div class="nav-column">
+                        <h5>Connect</h5>
+                        <nav class="footer-nav">
+                            <a href="#contact">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </a>
+                            <a href="/resume.pdf" target="_blank">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Resume</span>
+                            </a>
+                            <a href="#testimonials">
+                                <i class="fas fa-star"></i>
+                                <span>Testimonials</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4 class="connect-heading">Let's Connect</h4>
+                <p class="connect-text">Follow me on social media for updates and insights</p>
+                <!-- <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub Profile" class="social-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn Profile" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter Profile" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                </div> -->
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EROT BENARD. All rights reserved.</p>
+            <div class="footer-extra">
+                <a href="#" class="privacy-link">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="#" class="terms-link">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
