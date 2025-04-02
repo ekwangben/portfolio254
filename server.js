@@ -5,12 +5,24 @@ const nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+// Make sure to use the port Render provides
+const PORT = process.env.PORT || 10000;
 
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static('public')); // Change this to 'public' if your static files are in a public folder
 app.use(express.static('.')); // Serve static files from root directory
+
+// Add this near the top to ensure the server is responding
+app.get('/', (req, res) => {
+    res.send('Server is running!');
+});
+
+// Test route
+app.get('/test', (req, res) => {
+    res.json({ message: 'Server is running!' });
+});
 
 // Email configuration
 const transporter = nodemailer.createTransport({
@@ -28,11 +40,6 @@ transporter.verify(function(error, success) {
     } else {
         console.log("Server is ready to send emails");
     }
-});
-
-// Add a test route
-app.get('/test', (req, res) => {
-    res.json({ message: 'Server is running!' });
 });
 
 // Contact form endpoint
@@ -79,8 +86,20 @@ This email was sent from your portfolio contact form.`,
     }
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT}`);
+const server = app.listen(PORT, '0.0.0.0', () => {
+    const address = server.address();
+    console.log(`Server is running on port ${address.port}`);
+    console.log(`Server address: ${JSON.stringify(address)}`);
 });
+
+// Error handling
+server.on('error', (error) => {
+    console.error('Server error:', error);
+});
+
+process.on('unhandledRejection', (error) => {
+    console.error('Unhandled Rejection:', error);
+});
+
 
 
