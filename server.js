@@ -24,11 +24,15 @@ app.post('/api/contact', async (req, res) => {
     try {
         const { name, email, subject, message } = req.body;
 
+        if (!name || !email || !subject || !message) {
+            return res.status(400).json({ message: 'All fields are required' });
+        }
+
         // Email content
         const mailOptions = {
             from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER, // You'll receive emails at your address
-            replyTo: email, // Replies will go to the sender
+            to: process.env.EMAIL_USER,
+            replyTo: email,
             subject: `Portfolio Contact: ${subject}`,
             html: `
                 <h3>New Contact Form Submission</h3>
@@ -53,4 +57,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 

@@ -77,8 +77,8 @@ contactForm.addEventListener('submit', async (e) => {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
-        // Replace with your Render URL
-        const response = await fetch('https://portfolio254.onrender.com', {
+        // Update the URL to include the correct endpoint
+        const response = await fetch('http://localhost:3000/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -90,7 +90,8 @@ contactForm.addEventListener('submit', async (e) => {
             showNotification('Message sent successfully!', 'success');
             contactForm.reset();
         } else {
-            throw new Error('Failed to send message');
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to send message');
         }
     } catch (error) {
         console.error('Error:', error);
@@ -211,7 +212,7 @@ function closeModal() {
 }
 
 // Close modal when clicking the X
-document.querySelector('.close-modal').onclick = closeModal;
+document.querySelector('.close-modal').onclick =closeModal;
 
 // Close modal when clicking outside
 window.onclick = function(event) {
@@ -226,6 +227,7 @@ document.addEventListener('keydown', function(event) {
         closeModal();
     }
 });
+
 
 
 
