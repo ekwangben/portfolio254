@@ -6,6 +6,8 @@
     --accent-color: #4A90E2;  /* Professional blue */
     --text-color: #333333;
     --bg-color: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --heading-color: #2c2a2e;
     --gradient: linear-gradient(135deg, #2193b0, #6dd5ed);  /* Professional blue gradient */
     --transition: all 0.3s ease;
 }
@@ -15,6 +17,8 @@
     --text-color: #f3f4f6;
     --bg-color: #1a1a1a;
     --secondary-color: #2d2d2d;
+    --card-bg: #2d2d2d;
+    --heading-color: #f3f4f6;
     --primary-color: #ffffff;  /* Made brighter for better visibility */
     --secondary-gray: #a0a0a0; /* Lighter gray for better contrast */
     --gradient: linear-gradient(135deg, #8B31D6, #1E90FF);
@@ -57,6 +61,10 @@ body {
     position: relative;
     transition: var(--transition);
     min-height: 100vh;
+}
+
+p {
+    color: var(--text-color);
 }
 
 /* Add an overlay to ensure text readability */
@@ -423,6 +431,10 @@ section {
     position: relative;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+}
+
 h2 {
     text-align: center;
     margin-bottom: 3rem;
@@ -584,7 +596,7 @@ h2 {
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    height: 350px; /* Increased height to accommodate content */
+    height: 400px; /* Increased height to accommodate content and links */
 }
 
 .project-card img {
@@ -660,7 +672,47 @@ h2 {
     font-size: 0.8rem;
 }
 
-/* Remove the project-links related styles since we won't need them anymore */
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.project-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+}
+
+.project-link.github {
+    background: linear-gradient(135deg, #333 0%, #000 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-link.github:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-link i {
+    font-size: 1rem;
+}
 
 /* Scrollbar styling for project info */
 .project-info::-webkit-scrollbar {
@@ -679,6 +731,25 @@ h2 {
 /* Dark mode adjustments */
 [data-theme="dark"] .project-info {
     background: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] .project-card {
+    background: var(--secondary-color);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .project-title h3 {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .project-info p {
+    color: #f3f4f6;
+}
+
+[data-theme="dark"] .project-tech span {
+    background: var(--gradient);
+    color: #ffffff;
 }
 
 /* Responsive Adjustments */

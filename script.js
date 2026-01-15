@@ -77,8 +77,9 @@ contactForm.addEventListener('submit', async (e) => {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
-        // Update the URL to include the correct endpoint
-        const response = await fetch('http://localhost:3000/api/contact', {
+        console.log('Sending form data:', data); // Debug log
+
+        const response = await fetch('/api/contact', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -86,16 +87,17 @@ contactForm.addEventListener('submit', async (e) => {
             body: JSON.stringify(data)
         });
         
+        const responseData = await response.json();
+        
         if (response.ok) {
             showNotification('Message sent successfully!', 'success');
             contactForm.reset();
         } else {
-            const errorData = await response.json();
-            throw new Error(errorData.message || 'Failed to send message');
+            throw new Error(responseData.message || 'Failed to send message');
         }
     } catch (error) {
-        console.error('Error:', error);
-        showNotification('Failed to send message. Please try again.', 'error');
+        console.error('Detailed error:', error); // Debug log
+        showNotification(error.message || 'Failed to send message. Please try again.', 'error');
     } finally {
         // Restore button state
         submitBtn.innerHTML = originalBtnText;
@@ -105,13 +107,15 @@ contactForm.addEventListener('submit', async (e) => {
 
 // Notification System
 function showNotification(message, type) {
+    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.textContent = message;
     
+    // Add to document
     document.body.appendChild(notification);
     
-    // Remove notification after 3 seconds
+    // Remove after 3 seconds
     setTimeout(() => {
         notification.remove();
     }, 3000);
@@ -227,6 +231,7 @@ document.addEventListener('keydown', function(event) {
         closeModal();
     }
 });
+
 
 
 

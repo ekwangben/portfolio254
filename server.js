@@ -19,13 +19,32 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+// Verify transporter connection
+transporter.verify(function(error, success) {
+    if (error) {
+        console.log('Server error:', error);
+    } else {
+        console.log('Server is ready to take our messages');
+    }
+});
+
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
+    console.log('Received contact form submission:', req.body); // Debug log
+
     try {
         const { name, email, subject, message } = req.body;
 
         if (!name || !email || !subject || !message) {
-            return res.status(400).json({ message: 'All fields are required' });
+            return res.status(400).json({ 
+                message: 'All fields are required',
+                missing: {
+                    name: !name,
+                    email: !email,
+                    subject: !subject,
+                    message: !message
+                }
+            });
         }
 
         // Email content
@@ -46,10 +65,14 @@ app.post('/api/contact', async (req, res) => {
 
         // Send email
         await transporter.sendMail(mailOptions);
+        console.log('Email sent successfully'); // Debug log
         res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
-        console.error('Email error:', error);
-        res.status(500).json({ message: 'Failed to send email' });
+        console.error('Detailed email error:', error); // Debug log
+        res.status(500).json({ 
+            message: 'Failed to send email',
+            error: error.message 
+        });
     }
 });
 
@@ -57,5 +80,6 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
 
 
