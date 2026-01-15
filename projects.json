@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "title": "Hostel Booking App",
+        "description": "A mobile application built with React Native and Expo that simplifies hostel booking for students. Features include real-time room availability, secure payments, and virtual room tours.",
+        "technologies": [
+            "React Native",
+            "Expo",
+            "Firebase",
+            "Node.js"
+        ],
+        "liveUrl": "https://your-hostel-booking-app-url.com",
+        "githubUrl": "https://github.com/yourusername/hostel-booking-app",
+        "image": "images/booking app image.png"
+    },
+    {
+        "id": "2",
+        "title": "Task Manager App",
+        "description": "A React Native mobile app for task management with real-time updates, push notifications, and team collaboration features.",
+        "technologies": [
+            "React Native",
+            "Firebase",
+            "Redux"
+        ],
+        "liveUrl": "https://your-task-manager-app-url.com",
+        "githubUrl": "https://github.com/yourusername/task-manager-app",
+        "image": "images/task manager app.png"
+    },
+    {
+        "id": "3",
+        "title": "Weather Dashboard",
+        "description": "A weather application built with JavaScript that provides real-time weather updates using OpenWeatherMap API.",
+        "technologies": [
+            "JavaScript",
+            "Weather API",
+            "CSS3"
+        ],
+        "liveUrl": "https://your-weather-dashboard-url.com",
+        "githubUrl": "https://github.com/yourusername/weather-dashboard",
+        "image": "images/weather dashboard.png"
+    },
+    {
+        "id": "1768474500747",
+        "title": "agrifarm",
+        "description": "website for agriculture",
+        "technologies": [
+            "nextjs"
+        ],
+        "liveUrl": "https://portfolio254.onrender.com/",
+        "githubUrl": "https://github.com/ekwangben/portfolio254",
+        "image": "images/1768474457031-167515804-carosel2.jpg",
+        "images": [
+            "images/1768474457031-167515804-carosel2.jpg",
+            "images/1768474457078-833503490-carosel3.jpg",
+            "images/1768474457113-548582846-carosel4.jpg"
+        ]
+    }
+]

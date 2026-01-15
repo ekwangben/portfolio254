@@ -155,7 +155,54 @@ function reveal() {
     });
 }
 
-// Project Data
+// Load projects from API
+async function loadProjects() {
+    try {
+        const response = await fetch('/api/projects');
+        const projects = await response.json();
+
+        if (projects && projects.length > 0) {
+            displayProjects(projects);
+        }
+    } catch (error) {
+        console.error('Error loading projects:', error);
+    }
+}
+
+// Display projects in the grid
+function displayProjects(projects) {
+    const projectsGrid = document.querySelector('.projects-grid');
+    if (!projectsGrid) return;
+
+    projectsGrid.innerHTML = projects.map(project => `
+        <div class="project-card">
+            <img src="${project.image}" alt="${project.title}">
+            <div class="project-title">
+                <h3>${project.title}</h3>
+            </div>
+            <div class="project-info">
+                <p>${project.description}</p>
+                <div class="project-tech">
+                    ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+                </div>
+                <div class="project-links">
+                    ${project.liveLink ? `
+                        <a href="${project.liveLink}" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fas fa-external-link-alt"></i> View Live
+                        </a>
+                    ` : ''}
+                    ${project.githubLink ? `
+                        <a href="${project.githubLink}" target="_blank" rel="noopener noreferrer" class="project-link github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    ` : ''}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Project Data (fallback)
 const projectsData = [
     {
         id: 0,
@@ -247,6 +294,11 @@ document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape' && modal.style.display === 'block') {
         closeModal();
     }
+});
+
+// Load projects when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    loadProjects();
 });
 
 
