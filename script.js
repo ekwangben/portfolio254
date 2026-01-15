@@ -76,7 +76,7 @@ contactForm.addEventListener('submit', async (e) => {
     try {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
-        
+
         console.log('Sending form data:', data); // Debug log
 
         const response = await fetch('/api/contact', {
@@ -86,9 +86,20 @@ contactForm.addEventListener('submit', async (e) => {
             },
             body: JSON.stringify(data)
         });
-        
-        const responseData = await response.json();
-        
+
+        // Check if response has content before parsing JSON
+        const contentType = response.headers.get('content-type');
+        let responseData;
+
+        if (contentType && contentType.includes('application/json')) {
+            responseData = await response.json();
+        } else {
+            // If not JSON, get text response
+            const text = await response.text();
+            console.error('Non-JSON response:', text);
+            throw new Error('Server is not responding correctly. Please make sure the server is running.');
+        }
+
         if (response.ok) {
             showNotification('Message sent successfully!', 'success');
             contactForm.reset();
@@ -97,7 +108,13 @@ contactForm.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error('Detailed error:', error); // Debug log
-        showNotification(error.message || 'Failed to send message. Please try again.', 'error');
+
+        // Provide more specific error messages
+        if (error.message.includes('Failed to fetch')) {
+            showNotification('Cannot connect to server. Please make sure the server is running on port 3000.', 'error');
+        } else {
+            showNotification(error.message || 'Failed to send message. Please try again.', 'error');
+        }
     } finally {
         // Restore button state
         submitBtn.innerHTML = originalBtnText;
